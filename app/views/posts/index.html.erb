@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+ <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-md-6 " >
+           <br> <h1>Posts</h1><br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+    </tr>
+  </thead>
+   <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Post', new_post_path %>
+ </div>
+  </div>
+</div>
+
